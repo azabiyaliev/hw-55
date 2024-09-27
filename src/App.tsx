@@ -6,6 +6,7 @@ import cheeseImage from './assets/cheese.png';
 import saladImage from './assets/salad.png';
 import baconImage from './assets/bacon.png';
 import {useState} from 'react';
+import Burger from './components/Burger.tsx';
 
 type Ingredient = {
     name: string;
@@ -18,11 +19,22 @@ type Ingred = {
     count: number;
 }
 
+type IClasses = {
+    name: string;
+}
+
 const ingredients: Ingredient[] = [
     {name: 'Meat', price: 80, image: meatImage},
     {name: 'Cheese', price: 50, image: cheeseImage},
     {name: 'Salad', price: 10, image: saladImage},
     {name: 'Bacon', price: 60, image: baconImage},
+];
+
+const classes: IClasses [] = [
+    {name: 'Meat'},
+    {name: 'Cheese'},
+    {name: 'Salad'},
+    {name: 'Bacon'},
 ];
 
 const App = () => {
@@ -37,6 +49,8 @@ const App = () => {
     const display = {
         display: 'block',
     };
+
+
 
 
     const [price, setPrice] = useState<number>(30);
@@ -93,6 +107,12 @@ const App = () => {
         );
     });
 
+    const showIngredientsDiv = classes.map(ingredient => {
+        return (
+            <Burger name={ingredient.name}/>
+        );
+    });
+
     return (
       <div className="container">
           <div className="card">
@@ -106,6 +126,7 @@ const App = () => {
                       <div className="Seeds1"></div>
                       <div className="Seeds2"></div>
                   </div>
+                  {showIngredientsDiv}
                   <div className="BreadBottom"></div>
               </div>
               <p className='price'><b>Price: {price}</b></p>
