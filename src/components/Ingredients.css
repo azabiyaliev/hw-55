@@ -1,0 +1,32 @@
+.ingredients {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border: 1px solid #ffffff;
+    margin: 0 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.title {
+
+}
+
+.btnAdd {
+    background: #2b2b2b;
+    border: none;
+    margin: 5px 0;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.btnDelete {
+    background: #2b2b2b;
+    border: none;
+    cursor: pointer;
+}
+
+.svg {
+    fill: #ffffff;
+}
